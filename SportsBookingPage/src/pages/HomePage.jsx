@@ -2,13 +2,17 @@ import React, { useState, useEffect } from 'react';
 import { LogOut, ArrowRight, Activity, Calendar } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
-// Card กีฬา
-const SportCard = ({ title, icon: Icon, onClick }) => (
+// Card กีฬา (แก้เฉพาะส่วนนี้)
+const SportCard = ({ title, icon: Icon, imageSrc, onClick }) => (
     <div 
-        className="flex flex-col items-center justify-center p-4 bg-[#FFFACD] rounded-xl shadow-md hover:shadow-lg transition cursor-pointer space-y-2 w-full h-32"
+        className="flex flex-col items-center justify-center p-4 bg-[#FFFACD] rounded-xl shadow-md hover:shadow-lg transition cursor-pointer space-y-3 w-full h-40"
         onClick={onClick}
     >
-        <Icon className="w-8 h-8 text-gray-800" />
+        {Icon ? (
+            <Icon className="w-16 h-16 text-gray-800" />
+        ) : (
+            <img src={imageSrc} alt={title} className="w-12 h-12 object-contain" />
+        )}
         <p className="font-semibold text-gray-700">{title}</p>
     </div>
 );
@@ -105,10 +109,17 @@ const HomePage = () => {
                     <h2 className="text-xl font-bold text-gray-700">เลือกสนามกีฬาที่ต้องการจอง</h2>
 
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                        <SportCard title="แบดมินตัน" icon={Activity} onClick={goToBadmintonBooking} />
-                        <SportCard title="บาสเกตบอล" icon={Activity} onClick={goToBasketballBooking} />
-                        <SportCard title="เทนนิส" icon={Activity} onClick={goToTennisBooking} />
-                        <SportCard title="วอลเล่ย์บอล" icon={Activity} onClick={goToVolleyballBooking} />
+                        {/* ใช้ icon */}
+                        <SportCard title="แบดมินตัน" imageSrc="/images/shuttlecock.png" onClick={goToBadmintonBooking} />
+
+                        {/* ใช้ icon */}
+                        <SportCard title="บาสเกตบอล" imageSrc="/images/basketball.png" onClick={goToBasketballBooking} />
+
+                        {/* ใช้รูปภาพแทน icon */}
+                        <SportCard title="เทนนิส" imageSrc="/images/tennis.png" onClick={goToTennisBooking} />
+
+                        {/* ใช้ icon */}
+                        <SportCard title="วอลเล่ย์บอล" imageSrc="/images/volleyball.png" onClick={goToVolleyballBooking} />
                     </div>
                 </section>
 
