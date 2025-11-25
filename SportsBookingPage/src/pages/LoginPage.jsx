@@ -9,14 +9,12 @@ const LoginPage = () => {
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
 
-    // Custom Color Palette (จากโค้ดที่คุณให้มา)
     const primaryBackgroundColor = 'bg-[#B0C4DE]'; // Light Steel Blue
     const cardBackgroundColor = 'bg-[#FFFACD]'; // Lemon Chiffon
     const buttonColor = 'bg-[#77AADD]'; // Light Blue
     const buttonHoverColor = 'hover:bg-[#6699CC]'; // Darker Light Blue
     const linkColor = 'text-[#6495ED]'; // Cornflower Blue
 
-    // Style variables
     const inputStyle = `appearance-none block w-full pl-10 pr-3 py-3 border border-transparent 
                         rounded-lg placeholder-gray-400 focus:outline-none focus:ring-2 
                         focus:ring-[#77AADD] focus:border-[#77AADD] transition-colors duration-200 shadow-inner`;

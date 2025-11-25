@@ -10,9 +10,9 @@ import AdminPage from "./pages/AdminPage";
 import RegisterPage from './pages/RegisterPage';
 
 // นำเข้าหน้าจองสนามต่างๆ
-// import BadmintonBookingPage from './pages/BadmintonBookingPage';
+import BadmintonBookingPage from './pages/BadmintonBookingPage';
 import BasketballBookingPage from './pages/BasketballBookingPage';
-// import TennisBookingPage from './pages/TennisBookingPage';
+import TennisBookingPage from './pages/TennisBookingPage';
 import VolleyballBookingPage from './pages/VolleyballBookingPage';
 
 function App() {
@@ -31,9 +31,9 @@ function App() {
           <Route path="/register" element={<RegisterPage />} />
 
           {/* Route สำหรับหน้าจองสนาม */}
-          {/* <Route path="/book/badminton" element={<BadmintonBookingPage />} /> */}
+          <Route path="/book/badminton" element={<BadmintonBookingPage />} />
           <Route path="/book/basketball" element={<BasketballBookingPage />} />
-          {/* <Route path="/book/tennis" element={<TennisBookingPage />} /> */}
+          <Route path="/book/tennis" element={<TennisBookingPage />} />
           <Route path="/book/volleyball" element={<VolleyballBookingPage />} />
         </Routes>
       </div>
